@@ -1,0 +1,504 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+/* --- CSS Variables (Color Theme) --- */
+:root {
+    --primary-green: #5a7247;
+    --primary-green-hover: #6b8a53;
+    --light-green-bg: #f0f4e8;
+    --page-bg: #f9f9f5;
+    --dark-text: #3b3a3a;
+    --light-text: #ffffff;
+    --prize-color: #468a84;
+    --footer-bg: #343a40;
+    --border-color: #ddd;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+/* --- Global Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--page-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+h2.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-green);
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.logo i {
+    color: var(--primary-green);
+    margin-right: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: var(--dark-text);
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-green-hover);
+    transform: scale(1.05); /* <-- Button enlarge effect */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--dark-text);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    transform: scale(1.05);
+}
+
+.nav-links .btn {
+    padding: 8px 20px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--light-text);
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul a {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul a:hover {
+    color: var(--light-text);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* --- Home Page: Hero --- */
+.hero {
+    height: 80vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    margin: 0 10px;
+}
+
+/* --- Home Page: Intro --- */
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 60px auto;
+}
+
+.intro-features {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    text-align: left;
+}
+
+.feature-item h3 {
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- Home Page: Dates & Prizes --- */
+.dates-grid, .prizes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.date-card, .prize-card {
+    background-color: var(--light-green-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.date-card i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.date-card h3 {
+    font-size: 1.5rem;
+}
+
+.prize-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.prize-card h3 {
+    font-size: 1.2rem;
+    font-family: var(--body-font);
+    font-weight: 600;
+}
+
+.prize-card .amount {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    color: var(--prize-color);
+    margin: 15px 0;
+}
+
+/* --- Home Page: CTA --- */
+.cta {
+    background-color: var(--primary-green);
+    text-align: center;
+    color: var(--light-text);
+}
+
+.cta h2 {
+    color: var(--light-text);
+}
+
+.cta .btn {
+    background-color: var(--light-text);
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.cta .btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* --- About Page --- */
+.about-mission {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-mission img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.value-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.theme-card {
+    background-color: var(--light-green-bg);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.organizers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.organizer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.organizer-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.organizer-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- Contact & Registration Pages: Forms --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.contact-info .info-item {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.contact-info i {
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* --- Contact Page: FAQ --- */
+.faq-item {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    padding: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--border-color);
+    display: none; /* Will be toggled by JS */
+}
+
+/* --- Registration Page --- */
+.registration-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contest-rules {
+    background-color: var(--light-green-bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.contest-rules h4 {
+    margin-bottom: 15px;
+}
+
+.contest-rules ul {
+    list-style-position: inside;
+    font-size: 0.9rem;
+}
+
+.what-next-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.step-card .step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
